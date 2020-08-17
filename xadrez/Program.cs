@@ -10,7 +10,7 @@ namespace Xadrez
         static void Main(string[] args)
         {
             Tabuleiro tab = new Tabuleiro(8, 8);
-
+            /*
             try
             {
                 tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
@@ -24,7 +24,11 @@ namespace Xadrez
                 Console.WriteLine(e.Message);
             }
 
-           
+           */
+
+            PosicaoXadrez pos = new PosicaoXadrez('a', 1);
+            Console.WriteLine(pos);
+            Console.WriteLine(pos.ToPosicao());
 
         }
 
