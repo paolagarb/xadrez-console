@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tabuleiro
+namespace tabuleiro
 {
     class Peca
     {
@@ -23,5 +23,6 @@ namespace Tabuleiro
             QteMovimentos = 0;
         }
 
+        
     }
 }
