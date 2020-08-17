@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace tabuleiro
+namespace Tabuleiro
 {
     class Posicao
     {
-        public int linha { get; set; }
-        public int coluna { get; set; }
+        public int Linha { get; set; }
+        public int Coluna { get; set; }
+
+        public Posicao()
+        {
+        }
         public Posicao (int linha, int coluna)
         {
-            this.linha = linha;
-            this.coluna = coluna;
+            Linha = linha;
+            Coluna = coluna;
         }
         public override string ToString()
         {
-            return linha + ", " + coluna;
+            return Linha + ", " + Coluna;
         }
     }
 }

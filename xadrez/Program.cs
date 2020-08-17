@@ -1,7 +1,8 @@
 ﻿using System;
-using tabuleiro;
+using System.Xml;
+using Tabuleiro;
 
-namespace xadrez
+namespace Xadrez
 {
     class Program
     {
@@ -9,5 +10,6 @@ namespace xadrez
         {
             Console.WriteLine("Hello World!");
         }
+       
     }
 }
