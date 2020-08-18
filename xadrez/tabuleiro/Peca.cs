@@ -23,6 +23,9 @@ namespace tabuleiro
             QteMovimentos = 0;
         }
 
-        
+        public void IncrementarQtdeMovimento()
+        {
+            QteMovimentos++;
+        }
     }
 }
