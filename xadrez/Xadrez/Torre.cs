@@ -5,13 +5,19 @@ namespace Xadrez
 {
     class Torre : Peca
     {
-        public Torre(Tabuleiro tab, Cor cor) : base(cor, tab)
+        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
         }
 
         public override string ToString()
         {
             return "T";
+        }
+
+        private bool PodeMover(Posicao pos)
+        {
+            Peca p = Tab.Peca(pos);
+            return p == null || p.Cor != Cor;
         }
 
         public override bool[,] MovimentosPossiveis()

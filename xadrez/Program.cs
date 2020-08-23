@@ -18,13 +18,20 @@ namespace Xadrez
                 {
                     Console.Clear();
                     Tela.ImprimirTabuleiro(partida.Tab);
+                    Console.WriteLine($"\nTurno: {partida.Turno}");
+                    Console.WriteLine($"Aguardando jogada {partida.JogadorAtual}");
 
-                    Console.Write("Origem: ");
+                    Console.Write("Origem: ");  
                     Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
+
+                    bool[,] posicoesPossiveis = partida.Tab.Peca(origem).MovimentosPossiveis();
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.Tab, posicoesPossiveis);
+
                     Console.Write("Destino: ");
                     Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
 
-                    partida.ExecutaMovimento(origem, destino);
+                    partida.RealizaJogada(origem, destino);
                 }
             }
             catch(TabuleiroException e)

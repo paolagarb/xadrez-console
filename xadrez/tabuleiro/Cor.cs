@@ -9,7 +9,8 @@ namespace tabuleiro
         Branca,
         Preta,
         Amarela,
+        Azul,
         Vermelha,
-        Azul
+        Verde
     }
 }

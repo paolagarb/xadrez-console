@@ -15,7 +15,7 @@ namespace tabuleiro
         {
         }
 
-        public Peca(Cor cor, Tabuleiro tab)
+        public Peca(Tabuleiro tab, Cor cor)
         {
             Posicao = null;
             Cor = cor;
@@ -23,17 +23,10 @@ namespace tabuleiro
             QteMovimentos = 0;
         }
 
-        public virtual bool PodeMover(Posicao pos)
-        {
-            Peca p = Tab.Peca(pos);
-            return p == null || p.Cor != Cor;
-        }
-
         public void IncrementarQtdeMovimento()
         {
             QteMovimentos++;
         }
-
         public abstract bool[,] MovimentosPossiveis();
     }
 }
