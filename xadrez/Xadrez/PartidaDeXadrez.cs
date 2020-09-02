@@ -15,6 +15,7 @@ namespace Xadrez
         private HashSet<Peca> Pecas;
         private HashSet<Peca> Capturadas;
         public bool Xeque { get; private set; }
+        public Peca VulneravelEnPassant { get; private set; }
 
         public PartidaDeXadrez()
         {
@@ -23,6 +24,7 @@ namespace Xadrez
             JogadorAtual = Cor.Branca;
             Xeque = false;
             Terminada = false;
+            VulneravelEnPassant = null;
             Pecas = new HashSet<Peca>();
             Capturadas = new HashSet<Peca>();
             ColocarPecas();
@@ -54,6 +56,23 @@ namespace Xadrez
                 Peca T = Tab.RetirarPeca(origemT);
                 T.IncrementarQtdeMovimento();
                 Tab.ColocarPeca(T, destinoT);
+            }
+            /* En Passant */
+            if (p is Peao)
+            {
+                if (origem.Coluna != destino.Coluna && PecaCapturada == null)
+                {
+                    Posicao posP;
+                    if (p.Cor == Cor.Branca)
+                    {
+                        posP = new Posicao(destino.Linha + 1, destino.Coluna);
+                    } else
+                    {
+                        posP = new Posicao(destino.Linha - 1, destino.Coluna);
+                    }
+                    PecaCapturada = Tab.RetirarPeca(posP);
+                    Capturadas.Add(PecaCapturada);
+                }
             }
             return PecaCapturada;
         }
@@ -108,6 +127,15 @@ namespace Xadrez
             {
                 Turno++;
                 MudaJogador();
+            }
+            Peca p = Tab.Peca(destino);
+            /* En Passant */
+            if (p is Peao && (destino.Linha == origem.Linha - 2 || destino.Linha == origem.Linha + 2))
+            {
+                VulneravelEnPassant = p;
+            } else
+            {
+                VulneravelEnPassant = null;
             }
         }
 
@@ -166,6 +194,23 @@ namespace Xadrez
                 Peca T = Tab.RetirarPeca(destinoT);
                 T.IncrementarQtdeMovimento();
                 Tab.ColocarPeca(T, origemT);
+            }
+            /* En Passant */
+            if (p is Peao)
+            {
+                if (origem.Coluna != destino.Coluna && pecaCapturada == VulneravelEnPassant)
+                {
+                    Peca peao = Tab.RetirarPeca(destino);
+                    Posicao posP;
+                    if (p.Cor == Cor.Branca)
+                    {
+                        posP = new Posicao(3, destino.Coluna);
+                    } else
+                    {
+                        posP = new Posicao(4, destino.Coluna);
+                    }
+                    Tab.ColocarPeca(peao, posP);
+                }
             }
         }
 
