@@ -56,7 +56,7 @@ namespace Xadrez
                 {
                     break;
                 }
-                Pos.Linha = Pos.Coluna + 1;
+                Pos.Coluna = Pos.Coluna + 1;
             }
 
             Pos.DefinirValores(Posicao.Linha, Posicao.Coluna - 1);
@@ -67,7 +67,7 @@ namespace Xadrez
                 {
                     break;
                 }
-                Pos.Linha = Pos.Coluna - 1;
+                Pos.Coluna = Pos.Coluna - 1;
             }
 
             return Mat;

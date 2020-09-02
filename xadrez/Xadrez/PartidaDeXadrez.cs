@@ -48,6 +48,19 @@ namespace Xadrez
             }
         }
 
+        public void ValidarPosicaoDeOrigem(Posicao pos)
+        {
+            if (Tab.Peca(pos) == null) {
+                throw new Exception("Não existe peça na posição de origem escolhida!");
+            } if (JogadorAtual != Tab.Peca(pos).Cor)
+            {
+                throw new Exception("A peça de origem escolhida não é sua!");
+            } if (!Tab.Peca(pos).ExisteMovimentosPossiveis())
+            {
+                throw new Exception("Não há movimentos possíveis para essa peça!");
+            }
+        }
+
         private void ColocarPecas()
         {
             Tab.ColocarPeca(new Torre(Tab, Cor.Branca), new PosicaoXadrez('c', 1).ToPosicao());
