@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace tabuleiro
+﻿namespace tabuleiro
 {
     class Posicao
     {
@@ -12,7 +8,8 @@ namespace tabuleiro
         public Posicao()
         {
         }
-        public Posicao (int linha, int coluna)
+
+        public Posicao(int linha, int coluna)
         {
             Linha = linha;
             Coluna = coluna;

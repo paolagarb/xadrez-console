@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using tabuleiro;
+﻿using tabuleiro;
 
 namespace Xadrez.Xadrez
 {
@@ -32,41 +29,49 @@ namespace Xadrez.Xadrez
             {
                 Mat[Pos.Linha, Pos.Coluna] = true;
             }
+
             Pos.DefinirValores(Posicao.Linha - 2, Posicao.Coluna - 1);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 Mat[Pos.Linha, Pos.Coluna] = true;
             }
+
             Pos.DefinirValores(Posicao.Linha - 2, Posicao.Coluna + 1);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 Mat[Pos.Linha, Pos.Coluna] = true;
             }
+
             Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 2);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 Mat[Pos.Linha, Pos.Coluna] = true;
             }
+
             Pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 2);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 Mat[Pos.Linha, Pos.Coluna] = true;
             }
+
             Pos.DefinirValores(Posicao.Linha + 2, Posicao.Coluna + 1);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 Mat[Pos.Linha, Pos.Coluna] = true;
             }
+
             Pos.DefinirValores(Posicao.Linha + 2, Posicao.Coluna - 1);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 Mat[Pos.Linha, Pos.Coluna] = true;
             }
+
             Pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 2);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 Mat[Pos.Linha, Pos.Coluna] = true;
             }
+
             return Mat;
         }
     }

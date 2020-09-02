@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
 using tabuleiro;
 
 namespace Xadrez
@@ -115,7 +114,6 @@ namespace Xadrez
                     Console.Write(peca + " ");
                     Console.ForegroundColor = aux;
                 }
-                //Console.WriteLine(" ");
             }
         }
 

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using tabuleiro;
+﻿using tabuleiro;
 
 namespace Xadrez.Xadrez
 {
@@ -42,21 +39,25 @@ namespace Xadrez.Xadrez
                 {
                     Mat[Pos.Linha, Pos.Coluna] = true;
                 }
+
                 Pos.DefinirValores(Posicao.Linha - 2, Posicao.Coluna);
                 if (Tab.PosicaoValida(Pos) && Livre(Pos) && QteMovimentos == 0)
                 {
                     Mat[Pos.Linha, Pos.Coluna] = true;
                 }
+
                 Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
                 if (Tab.PosicaoValida(Pos) && ExisteInimigo(Pos))
                 {
                     Mat[Pos.Linha, Pos.Coluna] = true;
                 }
+
                 Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
                 if (Tab.PosicaoValida(Pos) && ExisteInimigo(Pos))
                 {
                     Mat[Pos.Linha, Pos.Coluna] = true;
                 }
+
                 /* En Passant */
                 if (Posicao.Linha == 3)
                 {
@@ -71,7 +72,8 @@ namespace Xadrez.Xadrez
                         Mat[direita.Linha - 1, direita.Coluna] = true;
                     }
                 }
-            } else
+            }
+            else
             {
                 Pos.DefinirValores(Pos.Linha + 1, Pos.Coluna);
                 if (Tab.PosicaoValida(Pos) && Livre(Pos))
@@ -93,6 +95,7 @@ namespace Xadrez.Xadrez
                 {
                     Mat[Pos.Linha, Pos.Coluna] = true;
                 }
+
                 /* En Passant */
                 if (Posicao.Linha == 4)
                 {

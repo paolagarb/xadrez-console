@@ -1,7 +1,4 @@
-﻿
-using Microsoft.VisualBasic;
-
-namespace tabuleiro
+﻿namespace tabuleiro
 {
     class Tabuleiro
     {
@@ -48,7 +45,8 @@ namespace tabuleiro
 
         public Peca RetirarPeca(Posicao pos)
         {
-            if (Peca(pos) == null) {
+            if (Peca(pos) == null)
+            {
                 return null;
             }
             Peca aux = Peca(pos);

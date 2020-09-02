@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using tabuleiro;
 using Xadrez.Xadrez;
 
@@ -40,6 +39,7 @@ namespace Xadrez
             {
                 Capturadas.Add(PecaCapturada);
             }
+
             /* Roque */
             if (p is Rei && destino.Coluna == origem.Coluna + 2)
             {
@@ -57,6 +57,7 @@ namespace Xadrez
                 T.IncrementarQtdeMovimento();
                 Tab.ColocarPeca(T, destinoT);
             }
+
             /* En Passant */
             if (p is Peao)
             {
@@ -74,6 +75,7 @@ namespace Xadrez
                     Capturadas.Add(PecaCapturada);
                 }
             }
+
             return PecaCapturada;
         }
 
@@ -113,6 +115,7 @@ namespace Xadrez
                 throw new TabuleiroException("Você não pode se colocar em xeque!");
             }
             Peca p = Tab.Peca(destino);
+
             /* Jogada - Promocao */
             if (p is Peao)
             {
@@ -125,15 +128,14 @@ namespace Xadrez
                     Pecas.Add(dama);
                 }
             }
-
-            if (EstaEmXeque(adversaria(JogadorAtual)))
+            if (EstaEmXeque(Adversaria(JogadorAtual)))
             {
                 Xeque = true;
             } else
             {
                 Xeque = false;
             }
-            if (TesteXequeMate(adversaria(JogadorAtual)))
+            if (TesteXequeMate(Adversaria(JogadorAtual)))
             {
                 Terminada = true;
             }
@@ -209,6 +211,7 @@ namespace Xadrez
                 T.IncrementarQtdeMovimento();
                 Tab.ColocarPeca(T, origemT);
             }
+
             /* En Passant */
             if (p is Peao)
             {
@@ -260,7 +263,7 @@ namespace Xadrez
             }
         }
 
-        private Cor adversaria (Cor cor)
+        private Cor Adversaria (Cor cor)
         {
             if (cor == Cor.Branca)
             {
@@ -285,15 +288,15 @@ namespace Xadrez
 
         public bool EstaEmXeque(Cor cor)
         {
-            Peca R = Rei(cor);
-            if (R == null)
+            Peca r = Rei(cor);
+            if (r == null)
             {
                 throw new TabuleiroException($"Não tem rei da cor {cor} no tabuleiro!");
             }
-            foreach (Peca x in PecasEmJogo(adversaria(cor)))
+            foreach (Peca x in PecasEmJogo(Adversaria(cor)))
             {
                 bool[,] mat = x.MovimentosPossiveis();
-                if (mat[R.Posicao.Linha, R.Posicao.Coluna])
+                if (mat[r.Posicao.Linha, r.Posicao.Coluna])
                 {
                     return true;
                 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq.Expressions;
-using System.Xml;
 using tabuleiro;
 
 namespace Xadrez
@@ -9,11 +7,9 @@ namespace Xadrez
     {
         static void Main(string[] args)
         {
-         
             try
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
-
                 while (!partida.Terminada)
                 {
                     try
@@ -34,8 +30,8 @@ namespace Xadrez
                         partida.ValidarPosicaoDeDestino(origem, destino);
 
                         partida.RealizaJogada(origem, destino);
-
-                    } catch (Exception e)
+                    }
+                    catch (Exception e)
                     {
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
@@ -44,18 +40,10 @@ namespace Xadrez
                 Console.Clear();
                 Tela.ImprimirPartida(partida);
             }
-            catch(TabuleiroException e)
+            catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
             }
-
-           
-            /*
-            PosicaoXadrez pos = new PosicaoXadrez('a', 1);
-            Console.WriteLine(pos);
-            Console.WriteLine(pos.ToPosicao());
-            */
         }
-
     }
 }

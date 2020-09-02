@@ -1,5 +1,4 @@
-﻿using System;
-using tabuleiro;
+﻿using tabuleiro;
 
 namespace Xadrez
 {
@@ -47,7 +46,6 @@ namespace Xadrez
                 Pos.Linha = Pos.Linha + 1;
             }
 
-
             Pos.DefinirValores(Posicao.Linha, Posicao.Coluna + 1);
             while (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
@@ -69,7 +67,6 @@ namespace Xadrez
                 }
                 Pos.Coluna = Pos.Coluna - 1;
             }
-
             return Mat;
         }
     }

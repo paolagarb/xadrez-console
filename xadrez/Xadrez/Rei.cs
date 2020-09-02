@@ -1,5 +1,4 @@
-﻿using System;
-using tabuleiro;
+﻿using tabuleiro;
 
 namespace Xadrez
 {
@@ -81,6 +80,7 @@ namespace Xadrez
             {
                 Mat[Pos.Linha, Pos.Coluna] = true;
             }
+
             /* Roque */
             if (QteMovimentos==0 && !Partida.Xeque)
             {
@@ -107,9 +107,6 @@ namespace Xadrez
                     }
                 }
             }
-
-
-
             return Mat;
         }
     }

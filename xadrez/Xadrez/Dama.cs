@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using tabuleiro;
+﻿using tabuleiro;
 
 namespace Xadrez.Xadrez
 {
@@ -48,7 +45,6 @@ namespace Xadrez.Xadrez
                 }
                 Pos.DefinirValores(Pos.Linha, Pos.Coluna + 1);
             }
-
 
             Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
             while (Tab.PosicaoValida(Pos) && PodeMover(Pos))
