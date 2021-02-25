@@ -1,8 +1,17 @@
-# Jogo de Xadrez 
+# <div align="center"> Jogo de Xadrez </div>
 
 
+### Tecnologias
 
-![](https://github.com/paolagarb/xadrez-console/blob/master/gif-xadrez.gif)
+- C# - Console
+
+
+### Projeto
+
+- Jogo de Xadrez 
+
+
+### Controles
 
  :white_check_mark: Movimento das peças pela sua posição
 
@@ -14,6 +23,12 @@
 
 
 
+<div align="center">
+ 
+![](https://github.com/paolagarb/xadrez-console/blob/master/gif-xadrez.gif)
 
+</div>
 
-Curso C# Completo 2020 - Prof. Nelio Alvez
+<hr>
+
+:heavy_exclamation_mark: Projeto do curso C# Completo 2020 - Prof. Nelio Alvez (UDEMY)
