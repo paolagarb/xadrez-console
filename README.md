@@ -8,11 +8,6 @@
 
 ### Projeto
 
-- Jogo de Xadrez 
-
-
-### Controles
-
  :white_check_mark: Movimento das peças pela sua posição
 
  :white_check_mark: Exibição de jogadas possíveis
